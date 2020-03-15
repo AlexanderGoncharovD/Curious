@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Curious.Views.Advart"
+             Padding="15">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BindingContext="{Binding Advart}">
+                <Label Text="{Binding Header}" d:Text="1-комн. кв., 45 м², 10/17 этаж"
+                            FontSize="19" TextColor="Black"/>
+                <StackLayout>
+                    <Image Source="home_icon" Aspect="AspectFit"
+                           HeightRequest="150" WidthRequest="150"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="{Binding Price}" d:Text="4 450 000 ₽"
+                           FontSize="18" TextColor="Black"/>
+                    <Label Text="{Binding SqM}" d:Text="353 000 ₽/м²"
+                           FontSize="14" TextColor="Gray"/>
+                    <Label Text="{Binding Address}" d:Text="Московская область, м. Пятницкое шоссе, Солнечногорск городской округ, Андреевка рп, 40"
+                           FontSize="14" LineBreakMode="WordWrap" TextColor="Black"
+                           TextDecorations="Underline"/>
+                    <Label Text="{Binding Descriptions}" d:Text="Продается 2-комнатная квартира, в строящемся доме (Корпус 01), срок сдачи: III-кв. 2020, общей площадью 83.00 кв.м., на 5 этаже. CITY PARK - новый жилой комплекс в Москве рядом с парком 'Красная Пресня'. Террасная застройка шести корпусов CITY PARK, эксплуатируемые крыши, внутренние дворы, организованные по принципу частного сада, предоставляют жителям квартир CITY PARK возможность быть ближе к природе, оставаясь в центре города.
+                           Интеграция архитектуры в природный ландшафт, использование натуральных материалов и воссоздание эргономичных форм делают ЖК CITY PARK островом комфортной и качественной городской жизни в центре Москвы. 
+                       
+                           В квартале парковая зелень соседствует с деловым сердцем города. Центр Международной торговли, Экспоцентр и 'Москва-Сити' задают деловой ритм Пресни, который уравновешивает умиротворенное пространство парка 'Красная Пресня'."
+                       
+                           FontSize="14" LineBreakMode="WordWrap" TextColor="Black"
+                           TextDecorations="Underline"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

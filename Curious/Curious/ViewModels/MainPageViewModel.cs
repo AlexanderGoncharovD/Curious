@@ -86,7 +86,7 @@ namespace Curious.ViewModels
                     Advarts.Add(advart);
                 }
                 _parent.UpdateCountAdvart(count);
-                AdvartHeight = Advarts.Count * 430;
+                AdvartHeight = Advarts.Count * 490;
                 _parent.UpdateCollectionAdvartsHeightSize(AdvartHeight);
                 IsLoading = false;
             }

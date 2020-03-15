@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Curious.ViewModels;
+using Curious.Views;
 
 namespace Curious
 {
@@ -19,6 +20,7 @@ namespace Curious
 
         public MainPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             _viewModel = new MainPageViewModel(this);
             BindingContext = _viewModel;
@@ -57,7 +59,20 @@ namespace Curious
 
         public void OpenSearchParameters_Click(object sender, EventArgs e)
         {
+        }
 
+        private async void AdvertItem_Tapped(object sender, EventArgs e)
+        {
+            var viewCell = ((ViewCell)((StackLayout)((Button)sender)?.Parent)?.Parent);
+            var advart = viewCell?.BindingContext as Cian.Advart;
+            if (advart != null)
+            {
+                await Navigation.PushAsync(new Advart(advart));
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
     }
 }
