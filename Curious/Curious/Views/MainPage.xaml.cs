@@ -17,6 +17,7 @@ namespace Curious
     {
 
         private readonly MainPageViewModel _viewModel;
+        private UriImageSource _imageSource;
 
         public MainPage()
         {
@@ -25,6 +26,12 @@ namespace Curious
             _viewModel = new MainPageViewModel(this);
             BindingContext = _viewModel;
             picker.SelectedIndex = 1;
+            _imageSource = new UriImageSource
+            {
+                Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+                CachingEnabled = true,
+                CacheValidity = new TimeSpan(5, 0, 0, 0)
+            };
         }
 
         public void UpdateCountAdvart(string count)
@@ -65,6 +72,7 @@ namespace Curious
         {
             var viewCell = ((ViewCell)((StackLayout)((Button)sender)?.Parent)?.Parent);
             var advart = viewCell?.BindingContext as Cian.Advart;
+            advart.ImageSource = _imageSource;
             if (advart != null)
             {
                 await Navigation.PushAsync(new Advart(advart));

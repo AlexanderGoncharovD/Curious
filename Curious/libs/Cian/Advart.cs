@@ -21,6 +21,9 @@ namespace Cian
 
         public string Address { get; }
 
+        public UriImageSource ImageSource { get; set; }
+
+
         public Advart(string header, string description, string price, string sqM, string address, string image)
         {
             Header = header;

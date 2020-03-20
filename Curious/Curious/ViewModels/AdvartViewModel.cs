@@ -9,9 +9,10 @@ namespace Curious.ViewModels
     {
         public Advart Advart { get; set; }
 
-        public AdvartViewModel(Cian.Advart advart)
+        public AdvartViewModel(Advart advart)
         {
             Advart = advart;
+
         }
 
     }

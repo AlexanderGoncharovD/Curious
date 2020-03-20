@@ -12,7 +12,7 @@
                 <Label Text="{Binding Header}" d:Text="1-комн. кв., 45 м², 10/17 этаж"
                             FontSize="19" TextColor="Black"/>
                 <StackLayout>
-                    <Image Source="home_icon" Aspect="AspectFit"
+                    <Image x:Name="MytImage" Aspect="AspectFit"
                            HeightRequest="150" WidthRequest="150"/>
                 </StackLayout>
                 <StackLayout>
