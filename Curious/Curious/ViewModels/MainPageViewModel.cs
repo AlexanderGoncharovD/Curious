@@ -73,22 +73,23 @@ namespace Curious.ViewModels
             await cian.Loading();
         }
 
-        private void OnLoaded(object sender, EventArgs e)
+        private async void OnLoaded(object sender, EventArgs e)
         {
             var page = sender as CianPage;
 
             if (page != null)
             {
-                var count = page.GetAdvartsCount();
+                var advarts = await page.GetAdvertsAsync();
 
-                foreach (var advart in page.GetAdverts())
+                foreach (var advart in advarts)
                 {
                     Advarts.Add(advart);
                 }
-                _parent.UpdateCountAdvart(count);
                 AdvartHeight = Advarts.Count * 490;
                 _parent.UpdateCollectionAdvartsHeightSize(AdvartHeight);
                 IsLoading = false;
+                var count = page.GetAdvartsCount();
+                _parent.UpdateCountAdvart(count);
             }
             else
             {

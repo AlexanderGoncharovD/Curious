@@ -68,7 +68,7 @@ namespace Cian
             Loaded?.Invoke(this, EventArgs.Empty);
         }
 
-        public ObservableCollection<Advart> GetAdverts()
+        public async Task<ObservableCollection<Advart>> GetAdvertsAsync()
         {
             var advarts = new ObservableCollection<Advart>();
             var headers = _htmlDocument.DocumentNode.SelectNodes(".//div[@class='c6e8ba5398--title--2CW78']");
@@ -90,7 +90,7 @@ namespace Cian
 
             for (int i = 0; i < composite?.Headers?.Count; i++)
             {
-                advarts.Add(composite.GetAdvart(i));
+                advarts.Add(await composite.GetAdvartAsync(i));
             }
             
             AdvartsCount = advarts.Count;

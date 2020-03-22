@@ -13,24 +13,23 @@ namespace Cian
 
         public string DescriptionShort { get; }
 
-        public HtmlWebViewSource Images { get; set; }
-
         public string Price { get; }
 
         public string SqM { get; }
 
         public string Address { get; }
 
-        public UriImageSource ImageSource { get; set; }
+        public ImageSource ImageSource { get; set; }
 
 
-        public Advart(string header, string description, string price, string sqM, string address, string image)
+        public Advart(string header, string description, string price, string sqM, string address, ImageSource image)
         {
             Header = header;
             Description = description;
             Price = price;
             SqM = sqM;
             Address = address;
+            ImageSource = image;
 
             if (!String.IsNullOrEmpty(description))
             {
@@ -39,9 +38,6 @@ namespace Cian
                     DescriptionShort = $"{description.Substring(0, 200)} ...";
                 }
             }
-            var htmlSource = new HtmlWebViewSource();
-            htmlSource.Html = $@"<image src='{image}' width='380'/>";
-            Images = htmlSource;
         }
     }
 }

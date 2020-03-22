@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Cian
 {
@@ -19,7 +20,7 @@ namespace Cian
 
         public HtmlNodeCollection Images { get; set; }
        
-        public Advart GetAdvart(int count)
+        public async Task<Advart> GetAdvartAsync(int count)
         {
             
             return new Advart(Headers[count].InnerText,
@@ -27,7 +28,7 @@ namespace Cian
                 Prices[count].InnerText,
                 SqMs[count].InnerText,
                 Addresses[count].InnerText,
-                Images[count].Attributes["src"].Value
+                await CianImage.LoadAsync(Images[count].Attributes["src"].Value)
             );
         }
     }

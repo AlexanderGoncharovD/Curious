@@ -53,8 +53,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10" Margin="0, 0, 0, 10">
-                                <WebView Source="{Binding Images}" HeightRequest="300"/>
+                            <StackLayout Padding="10">
+                                <Image Source="{Binding ImageSource}" HeightRequest="300"/>
                                 <Label Text="{Binding Price}" d:Text="4 450 000 ₽" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
                                 <Label Text="{Binding Header}"
                                        FontSize="14" FontAttributes="Bold" TextColor="Black"
